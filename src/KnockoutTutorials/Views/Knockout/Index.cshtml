@@ -1,0 +1,15 @@
+﻿@model List<string>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<ul>
+    @foreach (var item in Model)
+    { 
+        var title = item.Split('_')[1];
+        var link = "Knockout/" + item;
+        <li><a href="@link">@title</a></li>
+    }
+</ul>
