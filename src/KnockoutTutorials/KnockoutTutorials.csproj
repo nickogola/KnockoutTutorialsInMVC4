@@ -214,7 +214,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Knockout\01_Introduction\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -224,6 +223,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Knockout\T01_Introduction.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Knockout\T02_ListsAndCollections.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

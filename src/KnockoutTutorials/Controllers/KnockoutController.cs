@@ -10,7 +10,7 @@ namespace KnockoutTutorials.Controllers
     {
         //
         // GET: /Knockout/
-        private List<string> _pages = new List<string>() { @"T01_Introduction" };
+        private List<string> _pages = new List<string>() { "T01_Introduction", "T02_ListsAndCollections" };
 
         public ActionResult Index()
         {
@@ -18,6 +18,11 @@ namespace KnockoutTutorials.Controllers
         }
 
         public ActionResult T01_Introduction()
+        {
+            return View();
+        }
+
+        public ActionResult T02_ListsAndCollections()
         {
             return View();
         }
