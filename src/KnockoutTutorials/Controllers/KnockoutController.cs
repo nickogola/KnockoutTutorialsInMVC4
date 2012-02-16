@@ -12,7 +12,7 @@ namespace KnockoutTutorials.Controllers
     {
         //
         // GET: /Knockout/
-        private List<string> _pages = new List<string>() { "T01_Introduction", "T02_ListsAndCollections", "T03_SinglePageApplications" };
+        private List<string> _pages = new List<string>() { "T01_Introduction", "T02_ListsAndCollections", "T03_SinglePageApplications", "T04_CreatingCustomBindings" };
 
         public ActionResult Index()
         {
@@ -30,6 +30,11 @@ namespace KnockoutTutorials.Controllers
         }
 
         public ActionResult T03_SinglePageApplications()
+        {
+            return View();
+        }
+
+        public ActionResult T04_CreatingCustomBindings()
         {
             return View();
         }
