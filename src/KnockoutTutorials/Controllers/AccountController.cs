@@ -14,20 +14,20 @@ namespace KnockoutTutorials.Controllers
     {
 
         //
-        // GET: /Account/LogOn
+        // GET: /Account/Login
 
         [AllowAnonymous]
-        public ActionResult LogOn()
+        public ActionResult Login()
         {
             return ContextDependentView();
         }
 
         //
-        // POST: /Account/JsonLogOn
+        // POST: /Account/JsonLogin
 
         [AllowAnonymous]
         [HttpPost]
-        public JsonResult JsonLogOn(LogOnModel model, string returnUrl)
+        public JsonResult JsonLogin(LoginModel model, string returnUrl)
         {
             if (ModelState.IsValid)
             {
@@ -47,11 +47,11 @@ namespace KnockoutTutorials.Controllers
         }
 
         //
-        // POST: /Account/LogOn
+        // POST: /Account/Login
 
         [AllowAnonymous]
         [HttpPost]
-        public ActionResult LogOn(LogOnModel model, string returnUrl)
+        public ActionResult Login(LoginModel model, string returnUrl)
         {
             if (ModelState.IsValid)
             {
@@ -107,7 +107,7 @@ namespace KnockoutTutorials.Controllers
             {
                 // Attempt to register the user
                 MembershipCreateStatus createStatus;
-                Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, true, null, out createStatus);
+                Membership.CreateUser(model.UserName, model.Password, model.Email, passwordQuestion: null, passwordAnswer: null, isApproved: true, providerUserKey: null, status: out createStatus);
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
@@ -135,7 +135,7 @@ namespace KnockoutTutorials.Controllers
             {
                 // Attempt to register the user
                 MembershipCreateStatus createStatus;
-                Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, true, null, out createStatus);
+                Membership.CreateUser(model.UserName, model.Password, model.Email, passwordQuestion: null, passwordAnswer: null, isApproved: true, providerUserKey: null, status: out createStatus);
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
@@ -221,8 +221,7 @@ namespace KnockoutTutorials.Controllers
 
         private IEnumerable<string> GetErrorsFromModelState()
         {
-            return ModelState.SelectMany(x => x.Value.Errors
-                .Select(error => error.ErrorMessage));
+            return ModelState.SelectMany(x => x.Value.Errors.Select(error => error.ErrorMessage));
         }
 
         #region Status Codes

@@ -14,7 +14,7 @@ body {
     padding: 0;
 }
 
-a:link, a:visited, 
+a:link, a:visited,
 a:active, a:hover {
     color: #333;
     outline: none;
@@ -27,7 +27,7 @@ a:hover {
     background-color: #c7d1d6;
 }
 
-header, footer, hgroup
+header, footer, hgroup,
 nav, section {
     display: block;
 }
@@ -54,7 +54,7 @@ nav, section {
     visibility: hidden;
 }
 
-h1, h2, h3, 
+h1, h2, h3,
 h4, h5, h6 {
     color: #000;
     margin-bottom: 0;
@@ -62,7 +62,7 @@ h4, h5, h6 {
 }
 
 h1 {
-    font-size: 2em; 
+    font-size: 2em;
 }
 
 h2 {
@@ -82,7 +82,7 @@ h5, h6 {
 }
 
 
-/* main layout 
+/* main layout
 ----------------------------------------------------------*/
 .content-wrapper {
     margin: 0 auto;
@@ -96,13 +96,13 @@ h5, h6 {
 }
 
     .main-content {
-        background: url("../images/accent.png") no-repeat;
+        background: url("../Images/accent.png") no-repeat;
         padding-left: 10px;
         padding-top: 30px;
     }
 
     .featured + .main-content {
-        background: url("../images/heroaccent.png") no-repeat;
+        background: url("../Images/heroAccent.png") no-repeat;
     }
 
 footer {
@@ -122,7 +122,7 @@ footer {
     margin: 20px 0;
 }
 
-.site-title a, .site-title a:hover, .site-title a:active  {
+.site-title a, .site-title a:hover, .site-title a:active {
     background: none;
     color: #c8c8c8;
     outline: none;
@@ -130,12 +130,12 @@ footer {
 }
 
 
-/* login  
+/* login
 ----------------------------------------------------------*/
 #login {
     display: block;
     font-size: .85em;
-    margin-top: 20px;
+    margin: 20px 0 12px;
     text-align: right;
 }
 
@@ -146,20 +146,24 @@ footer {
         padding: 2px 3px;
         text-decoration: none;
     }
-    
+
     #login a.username {
         background: none;
         margin-left: 0px;
         text-decoration: underline;
     }
 
+    #login ul {
+        margin: 0;
+    }
+
     #login li {
         display: inline;
         list-style: none;
     }
-    
-    
-/* menu  
+
+
+/* menu
 ----------------------------------------------------------*/
 ul#menu {
     font-size: 1.3em;
@@ -186,8 +190,7 @@ ul#menu {
         }
 
 
-
-/* page elements  
+/* page elements
 ----------------------------------------------------------*/
 /* featured */
 .featured {
@@ -196,11 +199,11 @@ ul#menu {
 
     .featured .content-wrapper {
         background-color: #7ac0da;
-        background-image: -ms-linear-gradient(left, #7AC0DA 0%, #A4D4E6 100%);
-        background-image: -o-linear-gradient(left, #7AC0DA 0%, #A4D4E6 100%);
-        background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #7AC0DA), color-stop(1, #A4D4E6));
-        background-image: -webkit-linear-gradient(left, #7AC0DA 0%, #A4D4E6 100%);
-        background-image: linear-gradient(left, #7AC0DA 0%, #A4D4E6 100%);
+        background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
+        background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
+        background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6));
+        background-image: -webkit-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
+        background-image: linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         color: #3e5667;
         padding: 20px 40px 30px 40px;
     }
@@ -213,17 +216,18 @@ ul#menu {
             font-size: 1.1em;
         }
 
-/* page titles */ 
+/* page titles */
 hgroup.title {
     margin-bottom: 10px;
 }
 
 hgroup.title h1, hgroup.title h2 {
-display: inline;
+    display: inline;
 }
 
 hgroup.title h2 {
     font-weight: normal;
+    margin-left: 3px;
 }
 
 /* features */
@@ -243,20 +247,20 @@ ol.round {
         margin: 25px 0;
         padding-left: 45px;
     }
-    
+
         ol.round li.one {
-            background: url("../images/orderedlistOne.png") no-repeat;        
+            background: url("../Images/orderedListOne.png") no-repeat;
         }
-    
+
         ol.round li.two {
-            background: url("../images/orderedlistTwo.png") no-repeat;        
+            background: url("../Images/orderedListTwo.png") no-repeat;
         }
-    
+
         ol.round li.three {
-            background: url("../images/orderedlistThree.png") no-repeat;        
+            background: url("../Images/orderedListThree.png") no-repeat;
         }
-    
-/* content */  
+
+/* content */
 article {
     float: left;
     width: 70%;
@@ -271,17 +275,17 @@ aside {
         list-style: none;
         padding: 0;
     }
-    
-     aside ul li {
-        background: url("../images/bullet.png") no-repeat 0 50%;
-        padding: 2px 0 2px 20px;
-     }
-     
+
+        aside ul li {
+            background: url("../Images/bullet.png") no-repeat 0 50%;
+            padding: 2px 0 2px 20px;
+        }
+
 .label {
     font-weight: 700;
 }
 
-/* login page */ 
+/* login page */
 #loginForm {
     border-right: solid 2px #c8c8c8;
     float: left;
@@ -309,7 +313,7 @@ aside {
 }
 
 .contact iframe {
-    border: solid 1px #333;
+    border: 1px solid #333;
     margin: 5px 0 0 10px;
 }
 
@@ -328,22 +332,22 @@ fieldset {
         padding: 0;
         list-style: none;
     }
-    
+
         fieldset ol li {
             padding-bottom: 5px;
         }
-    
+
     fieldset label {
         display: block;
         font-size: 1.2em;
         font-weight: 600;
     }
-    
+
     fieldset label.checkbox {
         display: inline;
     }
-    
-    fieldset input[type="text"], 
+
+    fieldset input[type="text"],
     fieldset input[type="password"] {
         border: 1px solid #e2e2e2;
         color: #333;
@@ -352,15 +356,15 @@ fieldset {
         padding: 5px;
         width: 300px;
     }
-    
-        fieldset input[type="text"]:focus, 
+
+        fieldset input[type="text"]:focus,
         fieldset input[type="password"]:focus {
             border: 1px solid #7ac0da;
         }
-    
+
     fieldset input[type="submit"] {
         background-color: #d3dce0;
-        border: solid 1px #787878;
+        border: 1px solid #787878;
         cursor: pointer;
         font-size: 1.2em;
         font-weight: 600;
@@ -372,14 +376,14 @@ fieldset {
     font-size: 0.7em;
 }
 
-    .modal-popup input[type="text"], 
+    .modal-popup input[type="text"],
     .modal-popup input[type="password"] {
         width: 90%;
     }
 
-/* info and errors */  
+/* info and errors */
 .message-info {
-    border: solid 1px;
+    border: 1px solid;
     clear: both;
     padding: 10px 20px;
 }
@@ -399,10 +403,6 @@ fieldset {
     margin: 20px 0 10px 0;
 }
 
-.success {
-    color: #7ac0da;
-}
-
 .error {
     color: #e80c4d;
 }
@@ -419,7 +419,7 @@ fieldset {
 
 input[type="text"].input-validation-error,
 input[type="password"].input-validation-error {
-    border: solid 1px #e80c4d;
+    border: 1px solid #e80c4d;
 }
 
 .validation-summary-errors {
@@ -432,8 +432,6 @@ input[type="password"].input-validation-error {
     display: none;
 }
 
-
-
 ul#social li {
     display: inline;
     list-style: none;
@@ -443,7 +441,7 @@ ul#social li {
         color: #999;
         text-decoration: none;
     }
-        
+
     a.facebook, a.twitter {
         display: block;
         float: left;
@@ -452,29 +450,28 @@ ul#social li {
         text-indent: -9999px;
         width: 16px;
     }
-        
+
     a.facebook {
-        background: url("../images/facebook.png") no-repeat;
+        background: url("../Images/facebook.png") no-repeat;
     }
-        
+
     a.twitter {
-        background: url("../images/twitter.png") no-repeat;
+        background: url("../Images/twitter.png") no-repeat;
     }
-        
-        
-        
+
+
 /********************
 *   Mobile Styles   *
 ********************/
 @media only screen and (max-width: 850px) {
-    
-    /* header  
+
+    /* header
     ----------------------------------------------------------*/
-    header .float-left, 
+    header .float-left,
     header .float-right {
         float: none;
     }
-    
+
     /* logo */
     header .site-title {
         margin: 10px;
@@ -484,20 +481,20 @@ ul#social li {
     /* login */
     #login {
         font-size: .85em;
-        margin-top: 0;
+        margin: 0 0 12px;
         text-align: center;
     }
-    
+
         #login ul {
             margin: 5px 0;
             padding: 0;
         }
-        
+
         #login li {
             display: inline;
             list-style: none;
             margin: 0;
-            padding:0;
+            padding: 0;
         }
 
         #login a {
@@ -507,7 +504,7 @@ ul#social li {
             margin: 2px;
             padding: 0;
         }
-        
+
         #login a:hover {
             color: #333;
         }
@@ -516,10 +513,10 @@ ul#social li {
     nav {
         margin-bottom: 5px;
     }
-    
+
     ul#menu {
         margin: 0;
-        padding:0;
+        padding: 0;
         text-align: center;
     }
 
@@ -528,14 +525,14 @@ ul#social li {
             padding: 0;
         }
 
-        
-    /* main layout  
+
+    /* main layout
     ----------------------------------------------------------*/
     .main-content,
     .featured + .main-content {
         background-position: 10px 0;
     }
-    
+
     .content-wrapper {
         padding-right: 10px;
         padding-left: 10px;
@@ -544,13 +541,13 @@ ul#social li {
     .featured .content-wrapper {
         padding: 10px;
     }
-    
-    /* page content */  
+
+    /* page content */
     article, aside {
         float: none;
         width: 100%;
     }
-    
+
     /* ordered list */
     ol.round {
         list-style-type: none;
@@ -561,34 +558,34 @@ ul#social li {
             padding-left: 10px;
             margin: 25px 0;
         }
-    
+
             ol.round li.one,
             ol.round li.two,
             ol.round li.three {
-                background: none;        
+                background: none;
             }
-     
+
      /* features */
      section.feature {
         float: none;
         padding: 10px;
         width: auto;
      }
-     
+
         section.feature img {
             color: #999;
             content: attr(alt);
             font-size: 1.5em;
             font-weight: 600;
         }
-        
-    /* forms */    
-    fieldset input[type="text"], 
+
+    /* forms */
+    fieldset input[type="text"],
     fieldset input[type="password"] {
         width: 90%;
     }
-    
-    /* login page */ 
+
+    /* login page */
     #loginForm {
         border-right: none;
         float: none;
@@ -606,29 +603,29 @@ ul#social li {
         width: auto;
     }
 
-    /* footer  
-    ----------------------------------------------------------*/    
+    /* footer
+    ----------------------------------------------------------*/
     footer .float-left,
     footer .float-right {
         float: none;
     }
-    
+
     footer {
         text-align: center;
         height: auto;
         padding: 10px 0;
     }
-    
+
         footer p {
             margin: 0;
         }
-    
+
         ul#social {
-            padding:0;
+            padding: 0;
             margin: 0;
         }
-    
-         a.facebook, a.twitter {
+
+        a.facebook, a.twitter {
             background: none;
             display: inline;
             float: none;
@@ -636,5 +633,5 @@ ul#social li {
             padding-left: 0;
             text-indent: 0;
             width: auto;
-        }    
+        }
 }

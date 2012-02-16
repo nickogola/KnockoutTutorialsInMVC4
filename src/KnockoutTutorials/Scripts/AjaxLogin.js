@@ -1,22 +1,40 @@
-﻿/// <reference path="jquery-1.6.2.js" />
-/// <reference path="jquery.validate.js" />
-
-$(function () {
+﻿$(function () {
     // Cache for dialogs
     var dialogs = {};
 
     var getValidationSummaryErrors = function ($form) {
         // We verify if we created it beforehand
-        var errorSummary = $form.data('validation-summary-errors');
-        if (!errorSummary) {
+        var errorSummary = $form.find('.validation-summary-errors, .validation-summary-valid');
+        if (!errorSummary.length) {
             errorSummary = $('<div class="validation-summary-errors"><span>Please correct the errors and try again.</span><ul></ul></div>')
-                .insertBefore($form);
-
-            // Remember that we created it
-            $form.data('validation-summary-errors', errorSummary);
+                .prependTo($form);
         }
 
         return errorSummary;
+    };
+
+    var displayErrors = function (form, errors) {
+        var errorSummary = getValidationSummaryErrors(form)
+            .removeClass('validation-summary-valid')
+            .addClass('validation-summary-errors');
+
+        var items = $.map(errors, function (error) {
+            return '<li>' + error + '</li>';
+        }).join('');
+
+        var ul = errorSummary
+            .find('ul')
+            .empty()
+            .append(items);
+    };
+
+    var resetForm = function ($form) {
+        // We reset the form so we make sure unobtrusive errors get cleared out.
+        $form[0].reset();
+
+        getValidationSummaryErrors($form)
+            .removeClass('validation-summary-errors')
+            .addClass('validation-summary-valid')
     };
 
     var formSubmitHandler = function (e) {
@@ -32,17 +50,11 @@ $(function () {
                     if (json.success) {
                         location = json.redirect || location.href;
                     } else if (json.errors) {
-                        var errorSummary = getValidationSummaryErrors($form);
-
-                        var items = $.map(json.errors, function (error) {
-                            return '<li>' + error + '</li>';
-                        }).join('');
-
-                        var ul = errorSummary
-                            .find('ul')
-                            .empty()
-                            .append(items);
+                        displayErrors($form, json.errors);
                     }
+                })
+                .error(function () {
+                    displayErrors($form, ['An unknown error happened.']);
                 });
         }
 
@@ -68,7 +80,8 @@ $(function () {
                         modal: true,
                         resizable: true,
                         draggable: true,
-                        width: link.data('dialog-width') || 300
+                        width: link.data('dialog-width') || 600,
+                        beforeClose: function () { resetForm($(this).find('form')); }
                     })
                     .find('form') // Attach logic on forms
                         .submit(formSubmitHandler)
@@ -77,10 +90,10 @@ $(function () {
     };
 
     // List of link ids to have an ajax dialog
-    var links = ['logonLink', 'registerLink'];
+    var links = ['#loginLink', '#registerLink'];
 
     $.each(links, function (i, id) {
-        $('#' + id).click(function (e) {
+        $(id).click(function (e) {
             var link = $(this),
                 url = link.attr('href');
 
