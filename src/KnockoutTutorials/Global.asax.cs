@@ -43,7 +43,11 @@ namespace KnockoutTutorials
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
 
-            BundleTable.Bundles.RegisterTemplateBundles();
+            //Scott Guthrie's A look at ASP.NET MVC 4 (http://channel9.msdn.com/Events/TechDays/Techdays-2012-the-Netherlands/2364) 
+            //at time 13:15 uses the below syntax (which seems to work) as opposed to the latter
+            BundleTable.Bundles.EnableDefaultBundles();
+            //This only included certain files, not sure what is it's purpose
+            //BundleTable.Bundles.RegisterTemplateBundles();
         }
     }
 }
