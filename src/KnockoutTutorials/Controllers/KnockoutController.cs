@@ -12,32 +12,20 @@ namespace KnockoutTutorials.Controllers
     {
         //
         // GET: /Knockout/
-        private List<string> _pages = new List<string>() { "T01_Introduction", "T02_ListsAndCollections", "T03_SinglePageApplications", "T04_CreatingCustomBindings" };
+        private List<string> _pages = new List<string>() { "T01_Introduction", "T02_ListsAndCollections", "T03_SinglePageApplications", 
+            "T04_CreatingCustomBindings", "T05_LoadingAndSavingData" };
 
-        public ActionResult Index()
-        {
-            return View(_pages);
-        }
+        public ActionResult Index() { return View(_pages); }
 
-        public ActionResult T01_Introduction()
-        {
-            return View();
-        }
+        public ActionResult T01_Introduction() { return View(); }
 
-        public ActionResult T02_ListsAndCollections()
-        {
-            return View();
-        }
+        public ActionResult T02_ListsAndCollections() { return View(); }
 
-        public ActionResult T03_SinglePageApplications()
-        {
-            return View();
-        }
+        public ActionResult T03_SinglePageApplications() { return View(); }
 
-        public ActionResult T04_CreatingCustomBindings()
-        {
-            return View();
-        }
+        public ActionResult T04_CreatingCustomBindings() { return View(); }
+
+        public ActionResult T05_LoadingAndSavingData() { return View(); }
 
         public ActionResult MailBoxFolder(string folder)
         {
@@ -69,6 +57,38 @@ namespace KnockoutTutorials.Controllers
                 Content = System.IO.File.ReadAllText(finalLocation),
                 ContentType = "application/json"
             };
+        }
+
+        private static List<Task> _tasks;
+
+        [HttpGet]
+        public ActionResult Tasks()
+        {
+            if (_tasks == null)
+            {
+                var javascriptSerializer = new JavaScriptSerializer();
+                _tasks = javascriptSerializer.Deserialize<List<Task>>(System.IO.File.ReadAllText(Server.MapPath(Url.Content("~/TaskData/Tasks.json"))));
+            }
+
+            //if (Request.HttpMethod == "GET")
+            return Json(_tasks, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult Tasks(List<Task> tasks)
+        {
+            _tasks = (from t in tasks
+                      where !t._destroy
+                      select t).ToList();
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
+        }
+
+        [Serializable]
+        public class Task
+        {
+            public string title { get; set; }
+            public bool isDone { get; set; }
+            public bool _destroy { get; set; }
         }
     }
 }

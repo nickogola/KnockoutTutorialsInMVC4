@@ -1,0 +1,7 @@
+.loadingsaving ul { list-style-type: none; margin: 1em 0; background-color: #cde; padding: 1em; border-radius: 0.5em;  }
+.loadingsaving ul li a { color: Gray; font-size: 90%; text-decoration: none }
+.loadingsaving ul li a:hover { text-decoration: underline }
+.loadingsaving input:not([type]), input[type=text] { width: 30em; }
+.loadingsaving input[disabled] { text-decoration: line-through; border-color: Silver; background-color: Silver; }
+.loadingsaving textarea { width: 30em; height: 6em; }
+.loadingsaving form { margin-top: 1em; margin-bottom: 1em; }
