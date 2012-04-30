@@ -1,22 +1,30 @@
 ﻿html {
-    background-color: #e2e2e2;
+    background: #D05400 url(../Images/main-background.jpg) no-repeat top center;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-attachment: initial;
+    background-position-x: 50%;
+    background-position-y: 0%;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: #D05400;
     margin: 0;
-    padding: 0;
+    padding: 0;    
 }
 
 body {
-    background-color: #fff;
     border-top: solid 10px #000;
     color: #333;
     font-size: .85em;
-    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    font-family: Arial;
     margin: 0;
     padding: 0;
 }
 
 a:link, a:visited,
 a:active, a:hover {
-    color: #333;
+    font-family: Arial;   
+    color: #A71500;
     outline: none;
     padding-left: 3px;
     padding-right: 3px;
@@ -65,6 +73,12 @@ h1 {
     font-size: 2em;
 }
 
+.stickerHeading h1 {
+    margin-top: -5px;
+    color: #A71500;
+    font-weight: lighter;
+}
+
 h2 {
     font-size: 1.75em;
 }
@@ -90,19 +104,13 @@ h5, h6 {
 }
 
 #body {
-    background-color: #efeeef;
     clear: both;
     padding-bottom: 35px;
 }
 
     .main-content {
-        background: url("../Images/accent.png") no-repeat;
         padding-left: 10px;
         padding-top: 30px;
-    }
-
-    .featured + .main-content {
-        background: url("../Images/heroAccent.png") no-repeat;
     }
 
 footer {
@@ -117,16 +125,58 @@ footer {
 ----------------------------------------------------------*/
 .site-title {
     color: #c8c8c8;
-    font-family: Rockwell, Consolas, "Courier New", Courier, monospace;
+    font-family: Arial;   
     font-size: 2.3em;
     margin: 20px 0;
 }
 
 .site-title a, .site-title a:hover, .site-title a:active {
     background: none;
-    color: #c8c8c8;
+    color: white;
     outline: none;
     text-decoration: none;
+    padding-top: 50px;
+}
+
+.site-title img {
+    border: 0;
+    float: left;
+}
+
+/* new
+----------------------------------------------------------*/
+.vspace {
+    height: 2em;
+}
+
+.clear {
+    clear: both;
+}
+
+.sticker {
+    background-color: white;
+    padding: 1.25em 1.45em 1.25em 1.55em;
+    margin: 0.5em 0 3em 0;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    opacity: 0.9;
+    -moz-box-shadow: 0 0 1.1em #666;
+    -webkit-box-shadow: 0 0 1.1em #666;
+    box-shadow: 0 0 1.1em #666;
+}
+
+.stickerHeading {
+    background-color: #E5DAD6;
+    height: 1.3em;
+    margin: -2em -1.45em 1.25em -1.55em;
+    padding: 0.7em 1em 1.1em 1.75em;
+    -moz-border-radius-topright: 1em;
+    -moz-border-radius-topleft: 1em;
+    -webkit-border-top-right-radius: 1em;
+    -webkit-border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    border-top-left-radius: 1em;
 }
 
 
@@ -216,6 +266,10 @@ ul#menu {
             font-size: 1.1em;
         }
 
+.lessons li {
+    padding: 4px;
+}
+
 /* page titles */
 hgroup.title {
     margin-bottom: 10px;
@@ -248,18 +302,6 @@ ol.round {
         padding-left: 45px;
     }
 
-        ol.round li.one {
-            background: url("../Images/orderedListOne.png") no-repeat;
-        }
-
-        ol.round li.two {
-            background: url("../Images/orderedListTwo.png") no-repeat;
-        }
-
-        ol.round li.three {
-            background: url("../Images/orderedListThree.png") no-repeat;
-        }
-
 /* content */
 article {
     float: left;
@@ -275,11 +317,6 @@ aside {
         list-style: none;
         padding: 0;
     }
-
-        aside ul li {
-            background: url("../Images/bullet.png") no-repeat 0 50%;
-            padding: 2px 0 2px 20px;
-        }
 
 .label {
     font-weight: 700;

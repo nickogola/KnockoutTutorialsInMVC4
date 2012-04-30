@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "T05_LoadingAndSavingData";
+    ViewBag.Title = "Loading and Saving Data";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -12,8 +12,6 @@
 }
 
 <div class="loadingsaving">
-    <h2>T05_LoadingAndSavingData</h2>
-
     <h3>Tasks</h3>
 
     <form data-bind="submit: addTask">
@@ -56,13 +54,13 @@
         };
         self.removeTask = function (task) { self.tasks.destroy(task) };
 
-        $.getJSON("/Knockout/Tasks", function (allData) {
+        $.getJSON("/Home/Tasks", function (allData) {
             var mappedTasks = $.map(allData, function (item) { return new Task(item) });
             self.tasks(mappedTasks);
         });
 
         self.save = function () {
-            $.ajax("/Knockout/Tasks", {
+            $.ajax("/Home/Tasks", {
                 data: ko.toJSON({ tasks: self.tasks }),
                 type: "post", contentType: "application/json",
                 success: function(result) { alert(result) }
