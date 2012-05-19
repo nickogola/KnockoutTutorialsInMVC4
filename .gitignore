@@ -29,6 +29,7 @@ obj/
 [Bb]in
 [Dd]ebug*/
 [Rr]elease*/
+[Ff]akesAssemblies
 Ankh.NoLoad
 
 #Database File
@@ -40,6 +41,10 @@ Ankh.NoLoad
 _ReSharper*/
 *.resharper
 [Tt]est[Rr]esult*
+*.ncrunchproject
+*.ncrunchsolution
+#Compare Tool
+*.orig
 
 #Project files
 [Bb]uild/
